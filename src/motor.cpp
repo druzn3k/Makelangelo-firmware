@@ -1232,15 +1232,15 @@ void motor_line(const float *const target_position, float fr_mm_s, float millime
     // Special thanks to https://www.reddit.com/user/zebediah49 for his math help.
 
     // normal vectors pointing from plotter to motor
-    float R1x = axies[0].limitMin - oldX;  // to left
-    float R1y = axies[1].limitMax - oldY;  // to top
-    float Rlen = sqrt(sq(R1x) + sq(R1y));  // old_seg.a[0].step_count * MM_PER_STEP;
+    float R1x  = axies[0].limitMin - oldX;  // to left
+    float R1y  = axies[1].limitMax - oldY;  // to top
+    float Rlen = sqrt(sq(R1x) + sq(R1y));   // old_seg.a[0].step_count * MM_PER_STEP;
     R1x /= Rlen;
     R1y /= Rlen;
 
     float R2x = axies[0].limitMax - oldX;  // to right
     float R2y = axies[1].limitMax - oldY;  // to top
-    Rlen = sqrt(sq(R2x) + sq(R2y));        // old_seg.a[1].step_count * MM_PER_STEP;
+    Rlen      = sqrt(sq(R2x) + sq(R2y));   // old_seg.a[1].step_count * MM_PER_STEP;
     R2x /= Rlen;
     R2y /= Rlen;
 
